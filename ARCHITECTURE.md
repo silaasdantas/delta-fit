@@ -27,7 +27,7 @@ Fluxo implementado no I0: página web → API C# → PostgreSQL. [ADR-001](docs/
 
 ## Decisões necessárias ao I0
 
-Versões, estrutura, conexão/migrações e testes locais concretizados no I0 sob D74; configuração reproduzível em README.md. Git inicial preservado sem commits/remoto. Gateway, Terraform, demais tabelas, identidade e publicação continuam fora do recorte.
+Versões, estrutura, conexão/migrações e testes locais concretizados no I0 sob D74; configuração reproduzível em README.md. Git atual: main/e81da9b com origin; referência remota conferida na revisão de 19/10/2026. Gateway, Terraform, demais tabelas, identidade e publicação continuam fora do recorte.
 
 ## Como manter este documento
 
@@ -42,3 +42,5 @@ Versões, estrutura, conexão/migrações e testes locais concretizados no I0 so
 AGENTS.md orienta leitura; CONTEXT.md indica retomada; FIRST_VERSION.md e PRODUCT_DECISIONS.md descrevem produto; docs/delivery/I0.md descreve recorte e fechamento; docs/progress.md registra evidências. SPEC.md e PLANS.md são históricos parcialmente superados, não contratos técnicos vigentes.
 
 ADR-001/D69–73 implementados sob autorização local D74. Em 19/10/2026: 15 xUnit com PostgreSQL real e 5 Playwright com processos reais aprovados, builds/lint/TypeScript aprovados e demonstração com reinícios preservando UUID/volume concluída. Sem suíte unitária artificial. Web/API encerrados após demonstração; retomada pelo README. Não disponibilizado em servidor, sem validação por usuários, deploy, remoto Git ou pipeline. Próximo passo é revisão do I0; demais evoluções exigem autorização própria.
+
+Atualização da revisão em 19/10/2026: o parágrafo anterior descreve o fechamento inicial; remoto/commit agora existem e foram conferidos. Build/lint/TypeScript, 15 integrações e 5 E2E repetidos com sucesso pelo launcher no Windows PowerShell 5.1. Sem achado funcional relevante no recorte local; evidências e limites em docs/delivery/I0.md. Sem aceite funcional presumido, CI ou publicação.

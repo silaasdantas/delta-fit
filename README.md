@@ -32,6 +32,33 @@ Migrações versionadas são a única autoridade do schema. `migrate` aplica exp
 
 ## Executar
 
+### Usando Git Bash no Windows
+
+Você pode usar o Git Bash como terminal habitual e chamar o mesmo launcher pelo Windows PowerShell, sem instalar PowerShell 7 nem manter outro script. Na raiz do repositório:
+
+```bash
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/local.ps1 check
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/local.ps1 integration
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/local.ps1 e2e
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/local.ps1 stop-tests
+```
+
+Para executar a aplicação, use dois terminais Git Bash:
+
+```bash
+# Primeiro terminal
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/local.ps1 api
+```
+
+```bash
+# Segundo terminal
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/local.ps1 web
+```
+
+As ações `init`, `db`, `migrate` e `demo` usam a mesma forma de chamada. Execute as verificações sequencialmente. Para instalar Chromium pelo Git Bash, substitua o bloco com `Push-Location`/`Pop-Location` por `(cd apps/web && npx playwright install chromium)`. Os comandos com `powershell.exe` também funcionam no terminal PowerShell. O Bash usado aqui é o incluído no Git for Windows, não WSL; a execução continua dependendo das ferramentas Windows dos pré-requisitos.
+
+### Usando PowerShell
+
 Em dois terminais, na raiz:
 
 ```powershell

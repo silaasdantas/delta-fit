@@ -1,11 +1,12 @@
 # Delta Fit — prompts para iniciar conversas
 
-Atualizado em 18/10/2026. Catálogo solicitado pelo fundador (D63). Usar em conversas com acesso à pasta do projeto. A existência deste arquivo não inicia chats nem autoriza implementação. Cada bloco só vira instrução quando escolhido e enviado pelo usuário na conversa correspondente.
+Atualizado em 19/10/2026. Catálogo solicitado pelo fundador (D63). Usar em conversas com acesso à pasta do projeto. A existência deste arquivo não inicia chats nem autoriza implementação. Cada bloco só vira instrução quando escolhido e enviado pelo usuário na conversa correspondente.
 
 ## Como usar
 
 - Produto e planejamento: os prompts abaixo estão prontos para copiar.
-- Implementação do I0: prompt específico pronto na seção 3, com ficha I0-r1 e D69–73. Revisão continua como modelo a preencher após a entrega.
+- I0 implementado: seção 3 preserva a autorização executada sob D74; não reenviar para começar do zero. Revisão do I0 pronta na seção 4; planejamento do pipeline na seção 5.
+- D75: em cada próximo passo, indicar continuar no chat atual ou abrir outro, sua finalidade e o prompt correspondente. Correções do I0 podem continuar na implementação; revisão e planejamento de pipeline têm conversas próprias recomendadas. Não criar chats automaticamente.
 - O conteúdo dinâmico fica em CONTEXT.md e na ficha da entrega, evitando copiar um resumo que envelhece para cada prompt.
 - Outro chat ou ferramenta precisa acessar a mesma pasta ou receber os documentos. Não presumir memória global nem mensagens automáticas entre chats.
 - Ao mudar de etapa, atualizar somente o resumo correspondente. Não sobrescrever trabalho de outra conversa; reler arquivos antes de alterá-los.
@@ -54,14 +55,30 @@ Implemente e verifique somente o recorte autorizado, preservando alterações ex
 Ao concluir, registre na ficha e em docs/progress.md o que foi implementado, evidências de testes e demonstração, limitações, pendências e próximo passo. Diferencie implementado, verificado, disponibilizado em servidor e validado por usuários. Atualize o ponto técnico de retomada sem apagar o contexto de produto. Não envie mensagens a outras conversas nem crie chats por iniciativa própria.
 ```
 
-## 4. Revisão de entrega — modelo para preencher após implementação
+## 4. Revisão de entrega — I0-r1, pronto para copiar
 
 ```text
-Esta é uma conversa de revisão do incremento <ID>, descrito em <CAMINHO_DA_FICHA>. Leia AGENTS.md, a ficha, decisões de produto relacionadas e registros de progresso. Confira o código/diff correspondente e as evidências disponíveis; não considere a afirmação de conclusão como prova suficiente.
+Esta é uma conversa de revisão do I0-r1 do Delta Fit, descrito em docs/delivery/I0.md. Leia AGENTS.md, CONTEXT.md, FIRST_VERSION.md, ARCHITECTURE.md, docs/architecture/ADR-001.md, README.md e docs/progress.md; consulte D69–74 e decisões pertinentes. Confira Git, código e evidências, incluindo a correção do launcher para Windows PowerShell 5.1; não considere a afirmação de conclusão como prova suficiente. Commit inicial e remoto já existem: confira o estado atual, sem presumir que seja idêntico ao checkpoint.
 
 Avalie aderência ao escopo e critérios de aceite, falhas relevantes, isolamento de acesso quando aplicável e limitações de teste. Execute verificações não destrutivas pertinentes quando viáveis. Não altere a aplicação, faça deploy ou amplie o escopo nesta revisão. Registre achados e verificações na ficha, preservando evidências históricas, e diferencie problemas da entrega de sugestões futuras de produto.
 
 Entregue resultado da revisão com problemas priorizados, evidências e limites. Se não houver achados relevantes, diga quais verificações sustentam essa conclusão. Prepare um resumo documental para retomarmos a discussão de produto; não envie mensagens a outros chats.
+```
+
+## 5. Planejamento do pipeline de build e testes — pronto para copiar
+
+Abrir outro chat na mesma pasta. Enviar este bloco autoriza somente planejamento/documentação, sem configurar CI. Não presume aceite do I0.
+
+```text
+Esta é uma conversa de planejamento técnico do pipeline de build e testes do Delta Fit. Não autorizo implementar workflows, configurar serviços/segredos/remotos, contratar ou fazer deploy nesta conversa.
+
+Leia AGENTS.md, CONTEXT.md, FIRST_VERSION.md, DEVELOPMENT_WORKFLOW.md, ARCHITECTURE.md, docs/architecture/ADR-001.md, docs/delivery/I0.md, docs/progress.md e README.md. Consulte D62–66 e D69–75. Confira código, scripts, versões, histórico e estado Git existentes; preserve alterações. Repositório: https://github.com/silaasdantas/delta-fit.git. Não recrie Git, remoto ou I0. SPEC.md/PLANS.md não são contratos finais.
+
+Planeje somente CI para a base I0: restauração por lockfiles, build .NET/Next, lint/TypeScript, xUnit com PostgreSQL real e Playwright com processos reais. Avalie compatibilidade dos scripts com o runner proposto, bancos descartáveis, credenciais sintéticas, gatilhos, permissões mínimas e artefatos de falha. Não presumir que comandos locais Windows já rodem em Linux ou que PostgreSQL de CI seja homologação. GitHub Actions pode ser avaliado como proposta, sem aprovação prévia presumida.
+
+Prepare uma ficha própria em docs/delivery/ com objetivo, dentro/fora, decisões pendentes, critérios de aceite, verificações e plano mínimo. Registre pendências da revisão do I0 sem inventar aceite funcional do fundador. Homologação/acesso/hospedagem ficam para recorte posterior; sem deploy ou autenticação de produto por consequência.
+
+Atualize o ponto técnico de retomada sem apagar contexto de produto. Com ficha e recorte definidos, prepare o prompt específico de implementação em CHAT_PROMPTS.md; armazenar não autoriza executar. Indique quando continuar ou mudar de sessão. Não crie chats, delegue ou envie mensagens a outras conversas.
 ```
 
 ## Passagem entre conversas
@@ -71,6 +88,7 @@ Ao encerrar um bloco, registrar onde paramos, decisões ou evidências novas, pe
 ## Estado atual
 
 - Conversa de produto: em andamento.
-- Planejamento do I0: iniciado por instrução humana (D68); seção 2 serve também para retomada.
-- Ficha do I0: docs/delivery/I0.md, consolidada como I0-r1, pronta para implementar mediante autorização própria. ADR-001 com escolhas centrais aceitas para PostgreSQL em Compose (D69) e EF Core/Npgsql com migrações versionadas (D70) e Vertical Slice enxuta/Minimal APIs (D71) e divisão de testes (D72); transporte e contrato mínimo confirmados em D73. Local primeiro confirmado; homologação via pipeline posterior. Prompt específico de implementação pronto na seção 3; só seu envio autoriza execução.
-- Implementação, servidor e revisão de código: não iniciados.
+- Planejamento do I0 concluído; seção 2 preserva a instrução original, sem repetir o estado antigo.
+- I0-r1 implementado/verificado localmente sob D74; evidências em docs/progress.md. Commit inicial e remoto conferidos localmente em 19/10; isso não comprova aceite funcional ou revisão independente.
+- Chat atual: implementação/correções e passagem documental. Recomenda-se outro para revisão (seção 4) e outro para planejamento de pipeline (seção 5), conforme a finalidade escolhida. Planejamento pode registrar pendências da revisão, sem presumir aceite.
+- Servidor, pipeline e validação com usuários não comprovados. Nenhum chat criado automaticamente.

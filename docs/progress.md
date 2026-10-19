@@ -43,3 +43,29 @@ Demonstração concluída em 19/10/2026 às 00:12 (America/Sao_Paulo): exercíci
 **Implementado e verificado localmente**, com os resultados acima. **Não disponibilizado em servidor** e **não validado por usuários**. Sem autenticação/ownership, idempotency key ou política final de duplicados. Sem requisito arbitrário de tamanho de nome. Apenas dados sintéticos; não migrar esses registros para futuro piloto. Aviso ambiental do Playwright sobre NO_COLOR/FORCE_COLOR sem impacto nos testes. Verificação visual em desktop; não houve teste de usabilidade, matriz de navegadores ou entrega mobile.
 
 Próximo passo: revisão humana do I0-r1 a partir da ficha, código e evidências. Sem pendência funcional conhecida dentro dos critérios de aceite locais. Git preservado sem commits/remoto; versionamento por commit pode ser tratado na revisão. Pipeline/homologação e outros incrementos dependem de autorização própria. Após a demonstração, web/API foram encerrados; banco de desenvolvimento preserva volume e serviços de teste são parados ao fechar a execução. Para reabrir, seguir README.
+
+## Passagem posterior — 19/10/2026
+
+Usuário informou commit inicial. Conferência local: e81da9b, remoto origin https://github.com/silaasdantas/delta-fit.git; árvore limpa antes desta atualização documental. Não foi conferido push/estado remoto. Avisos de Git sem commits/remoto acima descrevem o estado inicial, superado por esta evidência. Aceite funcional e revisão independente não confirmados. D75: orientar troca/continuidade de chats; prompts de revisão do I0 e planejamento de CI preparados, sem configurar pipeline.
+
+## Revisão independente — 19/10/2026
+
+Concluída por solicitação humana nesta conversa de revisão, sem alterar aplicação/testes/launcher e sem deploy. Registro detalhado, aderência por critério e limitações em [I0 — revisão independente](delivery/I0.md#revisão-independente--19102026).
+
+- Conferidos main/HEAD e81da9ba8ac3d6bf0af621318e2cde611903d08f e origin; `git ls-remote origin refs/heads/main` confirmou mesmo SHA. Cinco documentos já modificados preservados. Código e launcher sem diferenças contra HEAD; nenhuma ação de escrita remota.
+- Executados via `powershell -NoProfile -ExecutionPolicy Bypass -File scripts/local.ps1`: `check` (restore locked, .NET 0 avisos/erros, lint, Next build, TypeScript), `integration` (15/15, 4 s), `e2e` (5/5, 9,0 s) e `stop-tests`. Windows PowerShell 5.1.26100.9711; BOM/RNG/npm.cmd revisados. Amplia a evidência anterior do launcher, que só cobria init/API.
+- Sandbox inicialmente bloqueou Docker/dotnet/rede; reexecuções autorizadas fora dele passaram. Aviso NO_COLOR/FORCE_COLOR sem impacto. Relatórios nos caminhos fixos do README foram atualizados pelas suítes; resultados históricos acima preservados como relatos das execuções anteriores.
+- Inspecionados JSON/captura da demonstração anterior e log API 5.1. SELECT EXISTS por UUID histórico no banco de desenvolvimento retornou true. Não repetidos reinícios, init isolado, instalação limpa, audit ou drift; consulta atual não substitui prova independente de reinício. Nenhum dado de desenvolvimento alterado pela revisão.
+- Nenhum achado funcional relevante no I0 local. P3 documental: resumos ainda afirmavam ausência de commit/remoto; contexto/arquitetura atualizados e fechamento histórico da ficha preservado com ressalva atual. Sem autenticação/ownership é limite aceito do incremento, não defeito; CORS não protege clientes locais nem autoriza exposição remota. Isolamento dos bancos e guardas de limpeza revisados.
+- Bancos de teste encerrados; desenvolvimento e catalogdb preservados. Aceite funcional do fundador e validação com usuários não presumidos. Próximo passo: conversa de produto, CHAT_PROMPTS.md seção 1, mínimo de prescrição para publicar versus salvar rascunho. Sem novas decisões de produto, CI, deploy ou mensagens entre chats.
+- O build Next regenerou next-env.d.ts com caminhos de tipos de produção; ao encerrar, o conteúdo versionado foi restaurado. Conferência final sem diferenças em apps/scripts/tests/README/Compose e `git diff --check` sem erros; somente documentação da revisão acrescentada às mudanças documentais preexistentes.
+
+## Uso pelo Git Bash no Windows — D76, 19/10/2026
+
+Após discussão e aceite do fundador, verificado o caminho Git Bash → powershell.exe → scripts/local.ps1, mantendo um único launcher. Git Bash localizado em C:/Program Files/Git/bin/bash.exe, GNU Bash 5.2.15(1)-release (MSYS); não foi usado o bash.exe de System32/WSL. Execução com `--noprofile --norc`, portanto sem depender de aliases/perfil pessoal.
+
+- `powershell.exe` encontrado no PATH do Git Bash como Windows PowerShell. Chamadas `-NoProfile -ExecutionPolicy Bypass -File scripts/local.ps1 check`, `integration` e `e2e` aprovadas: .NET 0 avisos/erros, lint/Next/TypeScript, **15/15 integração (4 s)** e **5/5 E2E (7,2 s)**. E2E exercitou inicialização real de API/web e migrations do banco descartável. Relatórios locais atualizados pelos runners.
+- Tentativa inicial de Git Bash no sandbox retornou exit 1 sem diagnóstico; reexecução autorizada fora dele passou. Aviso NO_COLOR/FORCE_COLOR conhecido sem impacto.
+- README documenta chamadas e alternativa Bash ao bloco Push-Location/Pop-Location para preparar Chromium. Não instaladas dependências nem repetido init, demo ou uso interativo/Ctrl+C dos comandos api/web pelo Git Bash. Não comprova execução Linux/macOS ou CI.
+- Launcher/aplicação sem mudanças manuais. next-env.d.ts já aparecia modificado ao iniciar este bloco; preservada a diferença gerada de caminhos .next/types contra .next/dev/types, sem atribuí-la a mudança funcional do produto. Demais alterações preexistentes preservadas. Desenvolvimento/volume não recriados; limpeza limitada a stop-tests.
+- Próximo passo: retomar conversa de produto com CHAT_PROMPTS.md seção 1, mínimo para publicar versus salvar rascunho. Sem novo incremento, CI ou deploy autorizado por esta verificação.

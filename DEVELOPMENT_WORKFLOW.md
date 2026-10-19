@@ -71,3 +71,5 @@ Ao retomar: usar CONTEXT.md como mapa, depois abrir os registros da frente ativa
 - [Anthropic — Effective harnesses for long-running agents](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents): continuidade entre sessões por progresso explícito, incrementos e verificações.
 
 Esta estrutura é adaptação proposta para um fundador solo; não afirma existir um processo único adotado por todas as grandes empresas, nem exige instalar ferramentas dessas fontes.
+
+D75 (19/10/2026): confirmado indicar explicitamente, em cada próximo passo, continuar na conversa atual ou mudar de sessão, informando finalidade e seção de CHAT_PROMPTS.md. Não criar chats automaticamente. A recomendação de chats próprios para revisão do I0 e planejamento de CI não equivale a autorização de implementação do pipeline.

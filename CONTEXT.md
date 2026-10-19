@@ -1,14 +1,16 @@
 # Delta Fit — leia primeiro para retomar
 
-Checkpoint: decisões/relatos até D74. Estado: **produto em discovery; I0-r1 implementado e verificado localmente em 19/10/2026**. Resumo substituível, não transcrição. Fonte detalhada: `PRODUCT_DECISIONS.md`; escopo organizado: `FIRST_VERSION.md`.
+Checkpoint: decisões/relatos até D76. Estado: **produto em discovery; I0-r1 implementado, verificado e revisado localmente em 19/10/2026**, sem aceite funcional presumido. Resumo substituível, não transcrição. Fonte detalhada: `PRODUCT_DECISIONS.md`; escopo organizado: `FIRST_VERSION.md`.
 
 ## Retomada técnica — I0-r1
 
 D74: autorização humana específica recebida nesta conversa para implementar/configurar/verificar somente o I0-r1 consolidado em D69–73. Sem deploy, contratação, pipeline, remoto Git, mobile, autenticação/ownership, dados reais ou incrementos seguintes. Avisos anteriores de ausência de autorização descrevem o planejamento, substituídos somente nesse recorte.
 
-Código local: apps/web (Next/TypeScript), apps/api/DeltaFit.Api (Minimal APIs/Vertical Slice/EF Core), Compose PostgreSQL e migração inicial; testes em tests/. Comandos em README.md e scripts/local.ps1. Git preservado sem commits/remoto e documentos preexistentes mantidos. Evidências em docs/progress.md: 15/15 integração PostgreSQL real, 5/5 E2E, builds/lint/TypeScript e demonstração com reinícios aprovados. Web/API encerrados ao concluir; volume de desenvolvimento preservado. Não disponibilizado em servidor nem validado por usuários. Próximo passo técnico: revisão humana do I0-r1; sem pendência funcional conhecida dentro do recorte, sem avançar automaticamente a pipeline/homologação/outro incremento.
+Código local: apps/web (Next/TypeScript), apps/api/DeltaFit.Api (Minimal APIs/Vertical Slice/EF Core), Compose PostgreSQL e migração inicial; testes em tests/. Comandos em README.md e scripts/local.ps1. Git main/e81da9b, origin https://github.com/silaasdantas/delta-fit.git; referência main remota conferida com mesmo SHA na revisão. Havia cinco documentos alterados após o commit; preservados. Evidências em docs/progress.md e revisão em docs/delivery/I0.md: build/lint/TypeScript, 15/15 integração PostgreSQL real e 5/5 E2E repetidos pelo Windows PowerShell 5.1, sem achado funcional relevante. Demonstração com reinícios é histórica; UUID ainda presente, sem repetir reinícios na revisão. Web/API de testes encerrados e bancos descartáveis parados; volume de desenvolvimento preservado. Não disponibilizado em servidor nem validado por usuários. Revisão técnica concluída; aceite funcional cabe ao fundador. Sem avanço automático a pipeline/homologação/outro incremento.
 
 Retomada de produto permanece a revisão antes de publicar descrita abaixo; I0 não decide requisitos da prescrição.
+
+D76: fundador prefere Git Bash no Windows. Mantido launcher PowerShell único, chamado por `powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/local.ps1 <ação>`; uso documentado no README e verificações em docs/progress.md. Sem novo script Bash ou portabilidade Linux/CI presumida. Próximo cenário de produto permanece inalterado.
 
 Revisão manual iniciada pelo usuário em 19/10: `pwsh` não estava no PATH do terminal comum. Corrigidos README e launcher para Windows PowerShell 5.1, sem instalar ferramenta ou mudar política permanente. Init e API/GET 200 verificados nesse PowerShell; detalhes em docs/progress.md. Usuário pode retomar execução pelos comandos atualizados do README.
 
@@ -49,7 +51,7 @@ Revisão manual iniciada pelo usuário em 19/10: `pwsh` não estava no PATH do t
 - Passagem técnica concluída (D74): usuário abriu esta conversa e autorizou somente I0-r1 local. Código e verificações em docs/progress.md; não repetir setup como se nada existisse. Homologação/pipeline continuam fora da autorização.
 - Retomada de produto solicitada pelo usuário: continuar revisão da ficha antes de publicar, definindo informação mínima por exercício. Próximo cenário proposto: exercício com séries preenchidas e sem repetições/duração/Até a falha; distinguir salvar rascunho de publicar incompleto. Descanso padrão e link opcional já decididos, não reabrir. Rest-pause continua fora do conjunto inicial aceito. Não iniciar código.
 
-D63/D73: prompts de entrada em CHAT_PROMPTS.md. Produto/planejamento disponíveis; implementação I0-r1 pronta na seção 3, revisão ainda é modelo para depois da entrega. Substitui o antigo prompt único de retomada desta seção. Arquivo criado, sem iniciar outra conversa ou execução.
+D63/D73: prompts de entrada em CHAT_PROMPTS.md. Para retomar produto, usar seção 1 em conversa dessa finalidade; revisão da seção 4 executada nesta conversa, resultados na ficha. Seção 3 preserva implementação já realizada, não reiniciar I0. Nenhum outro chat criado ou contatado.
 
 ## Produto e evidências
 
@@ -98,7 +100,11 @@ Direção atual e pendências em ARCHITECTURE.md (D67). API C#/ASP.NET Core, web
 - `AGENTS.md`: instruções curtas e protocolo de atualização.
 - `CONTEXT.md`: este checkpoint; atualizar quando mudar etapa ou decisão-chave, sem apêndice infinito.
 - `FIRST_VERSION.md`: escopo atual consolidado; não substitui detalhes de cada decisão.
-- `PRODUCT_DECISIONS.md`: decisões até D74, evidências, hipóteses e backlog. Passagens antigas podem ter confirmação posterior; usar decisão mais recente do mesmo tema.
+- `PRODUCT_DECISIONS.md`: decisões até D75, evidências, hipóteses e backlog. Passagens antigas podem ter confirmação posterior; usar decisão mais recente do mesmo tema.
 - `SPEC.md`/`PLANS.md`: material técnico inicial histórico, com avisos de desatualização. Não executar sem reconciliação.
 
 Memória é documental: novo chat precisa acessar esta pasta ou receber os arquivos. Não pressupor acesso global à conversa antiga. Implementação e verificações locais do I0 em docs/progress.md; isso não comprova servidor disponibilizado ou validação do produto com usuários.
+
+## Passagem técnica atual — D75, 19/10/2026
+
+Revisão independente concluída nesta conversa: nenhum achado funcional relevante, P3 documental sobre estado Git tratado por atualização do resumo e registro histórico na ficha. Commit local e main remoto iguais; testes repetidos conforme resumo acima. Limites completos em docs/delivery/I0.md; aceite funcional do fundador permanece não confirmado. Próximo passo solicitado: retomar a conversa de produto, usando CHAT_PROMPTS.md seção 1, no cenário de publicação incompleta já descrito. Planejamento de pipeline tem seção 5 e finalidade própria, sem execução automática. D75 exige indicar continuidade/finalidade, não criar chats. Nenhum pipeline ou deploy autorizado/executado e nenhuma nova decisão de produto nesta revisão.
