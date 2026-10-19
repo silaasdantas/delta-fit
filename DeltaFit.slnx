@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/apps/" />
+  <Folder Name="/apps/api/">
+    <Project Path="apps/api/DeltaFit.Api/DeltaFit.Api.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/DeltaFit.Api.IntegrationTests/DeltaFit.Api.IntegrationTests.csproj" />
+  </Folder>
+</Solution>
