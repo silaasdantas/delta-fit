@@ -60,7 +60,7 @@ Visão consolidada para revisão do primeiro piloto: `FIRST_VERSION.md`, separan
 | D50 | Preenchimento rápido de repetições com opção por série | Personal informa quantidade de séries e repetições comuns; ação Repetições por série permite valores diferentes. Aceito para facilitar montagem de séries comuns; detalhes de faixas e falha ainda abertos |
 | D51 | Facilidade de uso com robustez e utilidade | Diretriz confirmada: experiência de personal e aluno deve caber na demanda do dia, com pouco esforço de uso e flexibilidade suficiente para as necessidades de treino; validar com ambos, sem presumir facilidade apenas por menos cliques |
 | D52 | Interpretação confirmada do supino inclinado da ficha A | No exemplo de novembro, 2 séries — 12 - 1×falha significa duas séries de 12 mais uma até a falha, totalizando três. Confirmação do fundador sobre a referência; não é regra automática de interpretação de outras fichas |
-| D53 | Até a falha como opção de prescrição por série | Personal pode selecionar Até a falha em lugar de quantidade fixa naquela série; aluno recebe a orientação por extenso. Registro das repetições realizadas nesse caso ainda a definir |
+| D53 | Até a falha como opção de prescrição por série | Registro histórico: permitia Até a falha em lugar de quantidade fixa; esse ponto foi substituído por D77. Orientação por extenso preservada; registro realizado ainda aberto |
 | D54 | Sequência e descanso do bi-set de tríceps da ficha A | Fundador confirmou tríceps supinado seguido de francês, descansando somente após o par. Confirmação do exemplo; duração do descanso e interface de montagem ainda abertas |
 | D55 | Adicionar bi-set dentro do bloco | Caminho aceito pelo fundador para teste: ação Adicionar bi-set, com quantidade de rodadas, dois exercícios em sequência, prescrição própria de cada um e descanso após o par. Facilidade percebida pelo fundador, ainda sem teste com convidados |
 | D56 | Prescrição por duração no editor de séries | Escolher Repetições ou Duração; tempo informado vale para todas as séries, com ajuste individual quando necessário. Exemplo aceito: prancha com quatro séries de um minuto. Não define timer ou registro do aluno |
@@ -87,6 +87,34 @@ Visão consolidada para revisão do primeiro piloto: `FIRST_VERSION.md`, separan
 | D75 | Orientar explicitamente continuidade ou troca de conversa | Em 19/10/2026, fundador pediu indicar sempre se o próximo passo continua na sessão atual ou exige outra finalidade, com prompt organizado em CHAT_PROMPTS.md. Reforça D62–63; não autoriza criar chats ou executar pipeline. Revisão do I0 e planejamento de CI têm entradas próprias; correções podem continuar na implementação atual |
 
 | D76 | Usar Git Bash no Windows com o launcher existente | Fundador informou preferência por Git Bash nas suas máquinas e aceitou o próximo passo proposto: verificar chamadas a powershell.exe e documentar no README, mantendo scripts/local.ps1 como implementação única. Não implica portabilidade Linux/macOS/CI nem criação de wrapper Bash; evidências em docs/progress.md |
+
+| D77 | Repetições obrigatórias e separadas dos detalhes da série | Em 19/10/2026, fundador confirmou que repetições não podem ficar vazias na prescrição discutida; Até a falha, bi-set e drop-set são detalhes distintos da quantidade. Substitui D53 somente quanto a Até a falha substituir a quantidade. Salvamento de rascunho incompleto e significado da quantidade junto de falha ainda a esclarecer; não altera I0-r1 |
+
+| D78 | Quantidade como alvo quando a série é Até a falha | Fundador confirmou o exemplo hipotético 12 repetições + Até a falha: 12 é alvo, podendo o aluno realizar menos ou mais até atingir a falha. Preservar alvo prescrito separado do realizado; não é relato de execução nem regra para bi-set/drop-set. Não amplia I0-r1 |
+
+| D79 | Salvar rascunho incompleto e bloquear publicação sem repetições | Fundador confirmou permitir salvar a montagem com repetições ainda vazias e completar depois; publicação fica bloqueada até preencher as repetições. Aplica-se à prescrição por repetições discutida, preservando D56 para duração. Não amplia I0-r1 nem autoriza implementação |
+
+| D80 | Identificar repetições pendentes e abrir o preenchimento | Ao tentar publicar, mostrar exercício e séries sem repetições, com ação para abrir diretamente o preenchimento. Exemplo aceito: Remada: faltam repetições nas séries 2 e 3. Complementa bloqueio de D79; layout final ainda aberto, sem ampliar I0-r1 |
+
+| D81 | Bloquear publicação de exercício sem séries | Fundador confirmou permitir salvar rascunho com exercício ainda sem séries, mas bloquear publicação e indicar que falta definir a quantidade de séries. Exemplo aceito: Remada: defina a quantidade de séries. Não amplia I0-r1 |
+
+| D82 | Distinguir duração contínua de duração por séries | Fundador confirmou caminhada de 30 min contínuos com duração informada sem configurar 1 série; prancha 4 × 1 min mantém quatro séries. Qualifica D81: ausência de séries não bloqueia por si só o caso contínuo. Não define timer nem amplia I0-r1 |
+
+| D83 | Bloquear publicação de duração contínua sem tempo | Fundador confirmou rascunho permitido e publicação bloqueada enquanto faltar duração da caminhada contínua; mostrar Caminhada: informe a duração, com acesso ao campo. Complementa D82 sem exigir séries; não amplia I0-r1 |
+
+| D84 | Exigir duração em cada série para publicar | Fundador confirmou rascunho permitido com duração faltante por série, mas publicação bloqueada até completar; identificar exercício/série e oferecer acesso ao campo. Exemplo: Prancha: informe a duração da série 3. Não amplia I0-r1 |
+
+| D85 | Mostrar quantidade e detalhe juntos em cada série | Fundador confirmou apresentação ao aluno do exemplo hipotético: série 1, 12 repetições; série 2, 12 repetições; série 3, alvo de 10 repetições · Até a falha. Preservar distinção entre alvo e detalhe, aplicando falha somente à série indicada. Não amplia I0-r1 |
+
+| D86 | Aplicar sugestão geral de repetições também em Até a falha | Fundador confirmou seguir D25: alvo aparece como sugestão editável; aluno ajusta se fez diferente e confirma ao concluir série. Preservar alvo prescrito e realizado separados; sem confirmação não há execução registrada. Não amplia I0-r1 |
+
+| D87 | Sugerir duração prevista no registro da caminhada | Fundador escolheu iniciar o tempo realizado com os 30 min previstos como sugestão editável, para o aluno ajustar. Preservar confirmação e distinção previsto/realizado de D58; preenchimento inicial não comprova execução. Não amplia I0-r1 |
+| D88 | Tempo sugerido em cada série | D88 (24/10/2026): em cada série por duração, tempo prescrito como sugestão editável; aluno ajusta e confirma ao concluir. Previsto e realizado separados; preenchimento inicial não comprova execução. Exemplo confirmado: prancha 4 × 1 min. Timer, obrigatoriedade de manter valor e edição posterior seguem abertos. Sem ampliar I0-r1 ou autorizar código. |
+| D89 | Adiar timer de execução | Timer discutido para prancha fica fora da primeira versão, com reavaliação futura. Registro manual de duração preservado; timer de descanso inalterado. Não amplia I0-r1 |
+| D90 | Aluno preenche realizado nas faixas de repetições | Faixa prescrita visível como referência; campo realizado inicialmente vazio, preenchido pelo aluno e confirmado. Resolve preenchimento inicial pendente em D25; obrigatoriedade para concluir ainda aberta. Não amplia I0-r1 |
+| D91 | Concluir série com repetições não informadas | No cenário de faixa, aluno que não lembra quantidade pode concluir e completar depois. Não inventar realizado; conclusão da série e quantidade informada são distintas. Não amplia I0-r1 |
+| D92 | Aceitar realizado fora da faixa prescrita | Permitir registrar 6 ou 14 frente a 8–12 previstas; preservar previsto e realizado para comparação pelo personal, sem forçar enquadramento ou alterar prescrição. Não amplia I0-r1 |
+| D93 | Confirmar o par inteiro no bi-set | Aluno confirma o par de uma vez; preservar dados próprios dos dois exercícios e descanso somente após o par (D54–55). Registro parcial e apresentação ainda abertos; não amplia I0-r1 |
 
 Direção técnica discutida: API em C#/ASP.NET Core aproveitando a experiência do fundador; frontend web/mobile permanece TypeScript. Especificação técnica inicial ainda descreve backend Next.js e deve ser revisada separadamente. Não iniciar código de aplicação neste registro.
 
@@ -659,3 +687,105 @@ Proposta para discussão, ainda não aprovada: acompanhar água por dia e frequ�
 Outras pendências futuras: início/fim da semana, semanas que atravessam meses, meta alterada durante a semana, ingresso/pausa, critérios para sessão contar na frequência e mais de uma sessão no mesmo dia. Escolher quantidade semanal não define esses critérios.
 
 Detalhar uma sessão do ponto de vista do aluno: escolha da ficha/etapa, apresentação de instruções, registro, descanso, pedido de ajuda e encerramento. Usar cenário concreto para testar hipóteses, sem exigir conhecimento do processo interno de Alex. Depois discutir a fila do personal. Tudo permanece em discovery; cobrança, infraestrutura e implementação seguem adiadas.
+
+### Revisão da prescrição — repetições e detalhes da série (D77)
+
+Confirmação do fundador em 19/10/2026: no cenário de exercício com três séries e repetições vazias, a quantidade de repetições deve ser preenchida. Ir até a falha, bi-set e drop-set são detalhes da série distintos dessa quantidade; não usar sua seleção como substituta do preenchimento. Isso revisa D53 nesse ponto, preservando o histórico da interpretação da ficha em D52, sem inventar quantidade para a série até a falha daquela referência.
+
+Limites: não foi confirmado se rascunho incompleto pode ser salvo nem em que momento a validação ocorre. D56 sobre exercícios por duração permanece vigente; não exigir repetições em prancha/caminhada por extrapolação. Próximo cenário: definir o significado de uma quantidade prescrita junto de Até a falha (alvo, faixa ou outra orientação), sem presumir regra clínica. Registro das repetições realizadas e detalhes de etapas do drop-set seguem abertos. Impacto em futura prescrição/publicação; sem mudança do cadastro/listagem de exercícios do I0-r1 e sem autorização técnica adicional.
+
+### Quantidade junto de Até a falha (D78)
+
+Confirmação do fundador em 19/10/2026: no exemplo hipotético 12 repetições + Até a falha, 12 representa o alvo; o aluno pode realizar menos ou mais repetições até atingir a falha. Complementa D77 e resolve a pendência do significado da quantidade nesse caso. Não representa execução real, nem estabelece quantidade para a série histórica de D52. Alvo prescrito e repetições realizadas permanecem distintos; interface e preenchimento do realizado ainda a discutir, sem assumir confirmação automática do alvo. Não estender esse significado a bi-set/drop-set sem discussão própria.
+
+Próximo cenário proposto nesta conversa de produto: personal interrompe montagem após informar três séries, antes de preencher repetições; definir se pode salvar rascunho incompleto e completar depois, bloqueando publicação enquanto faltar o dado. Essa solução ainda é proposta. Impacto de D78 em futura prescrição/execução; sem ampliar I0-r1 ou autorizar código.
+
+### Rascunho incompleto e publicação (D79)
+
+Confirmação do fundador em 19/10/2026: personal pode interromper a montagem e salvar rascunho com séries informadas e repetições ainda vazias; pode completar depois. Publicação fica bloqueada enquanto faltar esse preenchimento na prescrição por repetições. Confirma a proposta de continuidade após D78; não impor preenchimento completo para salvar rascunho. Preserva D56 para exercícios prescritos por duração e D59 para prévia opcional; não decide outros campos mínimos nem o layout da indicação de pendências.
+
+Impacto: regra para futura montagem/publicação, sem alterar cadastro/listagem de exercícios do I0-r1 e sem autorização de código. Próximo cenário proposto nesta conversa de produto: ao tentar publicar ficha com supino completo e remada sem repetições, indicar o exercício e as séries pendentes e permitir ir diretamente ao preenchimento. Apresentação ainda não confirmada.
+
+### Localizar pendências antes de publicar (D80)
+
+Confirmação do fundador em 19/10/2026: ao tentar publicar uma ficha com repetições faltantes, identificar o exercício e as séries pendentes e oferecer ação para abrir diretamente seu preenchimento. Exemplo hipotético aceito: “Remada: faltam repetições nas séries 2 e 3”. Complementa D79; rascunho pode ser salvo incompleto, mas publicação permanece bloqueada até completar. Não confirma layout final nem outras validações. Impacto em futura montagem/publicação, sem ampliar I0-r1 ou autorizar implementação.
+
+Próximo cenário proposto nesta conversa de produto: revisar quantidade de séries como informação mínima, usando exercício incluído na ficha sem nenhuma série configurada; definir se também impede publicação. Não presumir confirmação pela regra de repetições.
+
+### Exercício sem séries na revisão de publicação (D81)
+
+Confirmação do fundador em 19/10/2026: no cenário de Remada adicionada à ficha sem nenhuma série configurada, permitir salvar rascunho e bloquear publicação, indicando “Remada: defina a quantidade de séries”. Complementa D79–80 com a ausência de séries, além de repetições faltantes. Não define limites numéricos de séries nem transforma métodos agrupados em séries comuns; aplicação à caminhada contínua e outros exercícios por duração ainda exige cenário próprio. Impacto em futura montagem/publicação, sem ampliar I0-r1 ou autorizar código.
+
+Próximo cenário proposto nesta conversa de produto: caminhada contínua por duração, por exemplo 30 minutos, sem repetição em séries. Definir se entra como uma execução contínua sem exigir que o personal configure quantidade de séries; preservar D56–58 sem inferir regra universal de D81.
+
+### Duração contínua e duração por séries (D82)
+
+Confirmação do fundador em 19/10/2026: para caminhada de 30 minutos contínuos, personal informa duração sem precisar configurar “1 série”. Para prancha de 4 × 1 minuto, continuam existindo quatro séries. Complementa D56–58 e qualifica D81: quantidade de séries é exigida nos casos organizados em séries, sem obrigar essa configuração no exercício contínuo. Não implica detecção automática do formato pelo nome do exercício, nem decisão sobre seletor/interface. Prescrito e realizado continuam separados conforme D58. Timer, preenchimento do realizado e publicação de duração vazia permanecem abertos. Impacto em futura prescrição/publicação; sem ampliar I0-r1 ou autorizar código.
+
+Próximo cenário proposto nesta conversa de produto: caminhada escolhida como duração contínua, mas tempo ainda vazio. Propor rascunho permitido e publicação bloqueada até informar duração, com indicação do exercício e acesso ao preenchimento, coerente com D79–80; ainda não confirmado para duração.
+
+### Duração vazia no exercício contínuo (D83)
+
+Confirmação do fundador em 19/10/2026: caminhada contínua sem duração preenchida pode ser salva no rascunho, mas impede publicação até informar o tempo. Mostrar “Caminhada: informe a duração”, com acesso ao campo. Complementa D82, sem exigir configurar séries no exercício contínuo, e estende ao cenário de duração contínua o tratamento de pendências discutido em D79–80. Não define limites de duração, preenchimento inicial, timer ou registro realizado. Impacto em futura montagem/publicação; sem ampliar I0-r1 ou autorizar implementação.
+
+Próximo cenário proposto nesta conversa de produto: prancha com quatro séries por duração, mas tempo vazio em uma delas; discutir bloqueio de publicação com identificação da série e acesso ao preenchimento, mantendo rascunho permitido. D83 não confirma automaticamente essa extensão.
+
+### Duração faltante por série (D84)
+
+Confirmação do fundador em 19/10/2026: na prancha com quatro séries por duração, tempo vazio em uma delas pode permanecer no rascunho, mas bloqueia publicação até completar. Identificar exercício e série, por exemplo “Prancha: informe a duração da série 3”, com acesso ao preenchimento. Complementa D56 e D79–83; tempo comum às séries e ajustes individuais continuam válidos. Não define limites numéricos, timer ou registro do realizado. Impacto em futura montagem/publicação; sem ampliar I0-r1 ou autorizar código.
+
+Próximo cenário proposto nesta conversa de produto: revisar a clareza da prescrição completa apresentada ao aluno — exemplo hipotético de três séries com alvos 12/12/10 e Até a falha somente na terceira. Propor apresentação conjunta da quantidade e do detalhe por série, preservando D77–78; layout e redação ainda não confirmados.
+
+### Apresentação de quantidade e detalhe por série (D85)
+
+Confirmação do fundador em 19/10/2026: apresentação ao aluno aceita no exemplo hipotético: “Série 1: 12 repetições”, “Série 2: 12 repetições” e “Série 3: alvo de 10 repetições · Até a falha”. Quantidade e detalhe aparecem juntos na série correspondente, preservando sua distinção (D77–78). Até a falha vale somente para a terceira série desse exemplo. Não é prescrição real, não altera números da referência histórica D52 e não confirma layout visual completo ou apresentação de bi-set/drop-set. Registro do realizado continua distinto do alvo; não considerar a exibição como execução. Impacto em futura apresentação da prescrição; sem ampliar I0-r1 ou autorizar código.
+
+Próximo cenário proposto nesta conversa de produto: aluno conclui a série com alvo de 10 e Até a falha, mas realiza 8; discutir como registrar o realizado sem confundi-lo com o alvo. D25 já permite ajustar repetições sugeridas e confirmar ao concluir série; consultar esse trecho antes de propor mudança ou perguntar novamente.
+
+### Registro de repetições em série Até a falha (D86)
+
+Confirmação do fundador em 19/10/2026: seguir a regra geral D25 também nas séries com Até a falha. No exemplo hipotético de alvo 10, o campo começa com 10 como sugestão editável; se realizou 8, aluno ajusta para 8 e confirma ao concluir série. Se confirma sem ajustar, confirma o valor sugerido; não registrar execução apenas pela apresentação ou preenchimento inicial. Manter alvo prescrito e realizado separados. Complementa D77–78 e D85, resolvendo o preenchimento inicial de repetições nesse caso; não estabelece preenchimento ou obrigatoriedade de duração realizada, nem regras de bi-set/drop-set. Impacto em futura execução/registro, sem ampliar I0-r1 ou autorizar código.
+
+Próximo cenário proposto nesta conversa de produto: retomar registro de duração realizada (D58), ainda sem preenchimento inicial definido. Caminhada prescrita de 30 min, aluno conclui após 20 min (exemplo hipotético, não relato). Comparar sugestão editável de 30 min com campo vazio para informar realizado; não estender D86 automaticamente ao tempo.
+
+### Preenchimento inicial de duração realizada na caminhada (D87)
+
+Escolha do fundador em 19/10/2026: na caminhada prescrita de 30 minutos, deixar 30 como sugestão inicial e permitir ao aluno ajustar o tempo realizado. Resolve o preenchimento inicial nesse cenário de D58; mantém duração prescrita separada da realizada e confirmação ao concluir, sem considerar valor previamente preenchido como execução comprovada. Exemplo é de comportamento do produto, não relato de caminhada efetivamente realizada. Não decide timer, obrigatoriedade do preenchimento, edição posterior ou extensão automática a duração por séries. Impacto em futura execução/registro, sem ampliar I0-r1 ou autorizar código.
+
+Próximo cenário proposto nesta conversa de produto: prancha de 4 × 1 minuto; definir se cada série também inicia com o tempo prescrito como sugestão editável, ajustada e confirmada ao concluir, mantendo previsto e realizado separados. Extensão de D87 ainda não confirmada.
+
+### Registro de tempo por série (D88)
+
+D88 (24/10/2026): em cada série por duração, tempo prescrito como sugestão editável; aluno ajusta e confirma ao concluir. Previsto e realizado separados; preenchimento inicial não comprova execução. Exemplo confirmado: prancha 4 × 1 min. Timer, obrigatoriedade de manter valor e edição posterior seguem abertos. Sem ampliar I0-r1 ou autorizar código.
+
+Próximo cenário nesta conversa de produto: timer opcional para apoiar execução da prancha; não pressupor conclusão de série ou confirmação do realizado pelo fim da contagem. Recurso ainda proposto.
+
+### Timer de execução adiado (D89)
+
+Confirmação em 24/10/2026: D89: fundador decidiu adiar o timer de execução discutido para prancha; pode ser reavaliado no futuro, sem compromisso de entrega. Primeira versão segue com duração prescrita como sugestão editável e confirmação manual do realizado (D87–88). Não altera o timer de descanso já confirmado em D28–29. Sem ampliar I0-r1 ou autorizar código.
+
+Próximo cenário nesta conversa de produto: registro de repetições quando o personal prescreve faixa, como 8–12. D25 deixa o preenchimento inicial em aberto; comparar sugestão de um limite com campo vazio, sem inferir preferência. Consultar trecho relevante antes de perguntar.
+
+### Registro de repetições prescritas em faixa (D90)
+
+Confirmação em 24/10/2026: D90: em prescrição por faixa, como 8–12 repetições, mostrar a faixa como referência e deixar o campo do realizado inicialmente vazio para o aluno preencher e confirmar. Não sugerir automaticamente 8 ou 12 nem oferecer esses valores como atalhos por esta decisão. Complementa D25 somente nesse caso; sugestões para quantidade única (D25/D86) e duração (D87–88) preservadas. Não define se pode concluir sem informar repetições. Sem ampliar I0-r1 ou autorizar código.
+
+Próximo cenário nesta conversa de produto: aluno executa série prescrita em 8–12, mas não lembra quantas fez. Definir se pode concluir a série com repetições não informadas, sem inventar quantidade, ou se deve preencher para concluir. D31 dispensa carga, mas não resolve automaticamente repetições.
+
+### Série concluída sem quantidade lembrada (D91)
+
+Confirmação em 24/10/2026: D91: no cenário de faixa 8–12 em que o aluno fez a série, mas não lembra quantas repetições realizou, permitir concluir com repetições não informadas e completar depois. Conclusão confirma a série relatada, sem inventar quantidade nem usar a faixa como realizado. Preserva correção de série concluída (D26); não autoriza edição irrestrita de sessões antigas, ainda pendente. Não amplia I0-r1 ou autoriza código.
+
+Próximo cenário nesta conversa de produto: aluno recebe faixa 8–12 e registra 6 ou 14 repetições. Propor aceitar o realizado sem forçar enquadramento na faixa, preservando prescrito e realizado para consulta do personal; comportamento ainda a confirmar.
+
+### Realizado fora da faixa prescrita (D92)
+
+Confirmação em 24/10/2026: D92: aceitar repetições realizadas fora da faixa prescrita. No exemplo hipotético de 8–12 previstas, permitir registrar 6 ou 14, preservando faixa prescrita e quantidade realizada separadas para comparação pelo personal. Não forçar o registro para dentro da faixa nem alterar a prescrição. Não implica ajuste automático, alerta ou classificação de desempenho. Sem ampliar I0-r1 ou autorizar código.
+
+Próximo cenário nesta conversa de produto: execução e registro do bi-set de D54–55. Primeiro exercício concluído deve levar ao segundo, sem iniciar descanso entre eles; discutir gesto de confirmação por exercício versus por par, preservando descanso somente após o par já confirmado. Interface ainda aberta.
+
+### Confirmação conjunta no bi-set (D93)
+
+Confirmação em 24/10/2026: D93: no bi-set discutido em D54–55, aluno confirma o par inteiro de uma vez, em vez de confirmar cada exercício separadamente. Preserva dois exercícios ordenados com prescrição e registros próprios; confirmação conjunta não transforma suas quantidades ou cargas em um único valor. Descanso somente após o par continua confirmado. Não define registro de par parcial, preenchimento inicial ou obrigação de informar cada campo. Sem ampliar I0-r1 ou autorizar código.
+
+Próximo cenário nesta conversa de produto: apresentação do registro do par completo. Propor uma área por exercício, com repetições/carga próprias, e ação Concluir par para salvar a rodada e iniciar descanso; apresentação ainda não confirmada. Não extrapolar para par parcial.
