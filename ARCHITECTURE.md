@@ -13,7 +13,7 @@ Manter uma visão atual da arquitetura, seus limites e escolhas pendentes. Evolu
 | Web | Next.js e TypeScript | Primeiro frontend do I0 |
 | API | ASP.NET Core e C# | Backend do fluxo integrado; substitui a antiga proposta de toda API em Next.js |
 | Banco | PostgreSQL | Persistência do I0, inicialmente local |
-| Mobile | Expo/React Native e TypeScript | Incremento posterior, com offline obrigatório antes do piloto |
+| Mobile | Expo/React Native e TypeScript | Planejado para primeira versão utilizável do aluno como aplicativo instalado Android e iOS (D102–104); offline obrigatório antes do piloto. Distribuição, validação nas duas plataformas e recorte ainda a planejar; sem implementação mobile autorizada |
 | Serviços gerenciados | Supabase registrado para PostgreSQL/Auth/Storage | Integração de identidade, RLS e API C# ainda requer definição; não usar automaticamente os contratos antigos |
 
 Fluxo implementado no I0: página web → API C# → PostgreSQL. [ADR-001](docs/architecture/ADR-001.md): navegador chama API diretamente, um único projeto de API organizado por funcionalidade com Minimal APIs, EF Core/Npgsql e migrações explícitas como autoridade única do schema. Next.js não contém API concorrente de negócio. Contrato e verificações em docs/delivery/I0.md.

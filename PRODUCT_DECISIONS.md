@@ -115,6 +115,26 @@ Visão consolidada para revisão do primeiro piloto: `FIRST_VERSION.md`, separan
 | D91 | Concluir série com repetições não informadas | No cenário de faixa, aluno que não lembra quantidade pode concluir e completar depois. Não inventar realizado; conclusão da série e quantidade informada são distintas. Não amplia I0-r1 |
 | D92 | Aceitar realizado fora da faixa prescrita | Permitir registrar 6 ou 14 frente a 8–12 previstas; preservar previsto e realizado para comparação pelo personal, sem forçar enquadramento ou alterar prescrição. Não amplia I0-r1 |
 | D93 | Confirmar o par inteiro no bi-set | Aluno confirma o par de uma vez; preservar dados próprios dos dois exercícios e descanso somente após o par (D54–55). Registro parcial e apresentação ainda abertos; não amplia I0-r1 |
+| D94 | Fluxo normal de registro do bi-set | Dois exercícios juntos com dados próprios; Concluir par salva rodada e inicia descanso; depois seguir à próxima, preservando registros. Transição final e par parcial ainda abertos; não amplia I0-r1 |
+| D95 | Descanso na transição final do bi-set | Após última rodada, manter descanso prescrito e apresentar próximo exercício sem iniciar execução automaticamente. Complementa D94; não amplia I0-r1 |
+| D96 | Registrar execução parcial do bi-set | Permitir registrar somente primeiro exercício realizado; segundo não informado ou Não fiz por indicação explícita. Não marcar par como totalmente realizado; descanso parcial ainda aberto. Não amplia I0-r1 |
+| D97 | Encerrar rodada parcial com descanso | Primeiro realizado e segundo marcado Não fiz permitem encerrar rodada parcial e iniciar descanso previsto; preservar registros sem marcar par completo. Não se estende a segundo não informado; não amplia I0-r1 |
+| D98 | Drop-set: relato de carga escolhida e descanso após ciclo | Relato do fundador: escolhia peso que conseguia, seguia ordem de repetições/reduções e descansava após primeiro ciclo de drop. Significado de ciclo e detalhes ainda a esclarecer; não é protocolo universal confirmado |
+| D99 | Drop-set sem pausa interna e reduções definidas pelo personal | Personal define número de reduções, sem informar pesos; aluno escolhe cargas. Sem descanso entre etapas. Número de ciclos e tamanho das reduções ainda abertos; não amplia I0-r1 |
+| D100 | Montagem do drop-set por ciclos e etapas | Personal define ciclos, reduções por ciclo, repetições por etapa e descanso após ciclo. Duas reduções geram três etapas; pesos escolhidos pelo aluno e sem pausa interna (D99). Não amplia I0-r1 |
+| D101 | Registrar drop-set ao concluir ciclo | Dados por etapa, sem interação entre reduções; Concluir ciclo salva e inicia descanso; carga opcional. Não amplia I0-r1 |
+| D102 | Priorizar primeiras versões de acesso e Home com aluno mobile | Aluno somente mobile; personal mobile e browser no computador. Discutir Login, Registro/Cadastro e Home em etapas funcionais; manter convites, esclarecer formato mobile. Sem autorização de execução |
+| D103 | Aplicativo instalado para aluno desde primeira versão | Primeira versão utilizável já inclui aplicativo instalado; sistemas iniciais e distribuição ainda abertos. Complementa D102; não amplia autorização do I0-r1 |
+| D104 | Android e iPhone na primeira versão instalada | Aplicativo do aluno atende Android e iOS desde primeira versão utilizável; distribuição/validação ainda a planejar. Não amplia I0-r1 |
+| D105 | Acesso por e-mail/senha e interesse em login social | E-mail/senha aceitos; Google, Facebook e Apple como interesse a priorizar, sem aceite de todos na primeira entrega |
+| D106 | Validade de acesso definida pelo personal e avisos de renovação | Prazo do acompanhamento no convite/cadastro; vencimento retira acesso, sem gestão de pagamento. Avisar aluno para renovar com personal; alcance/operacional ainda abertos. Não amplia I0-r1 |
+| D107 | Acesso vencido permite aviso e histórico, sem novos treinos | Manter login, aviso de renovação e consulta do histórico; bloquear início de treino. Qualifica D106; sessão iniciada e offline ainda abertos. Não amplia I0-r1 |
+| D108 | Validade por data final ou duração em dias | Oferecer ambas as formas; início da contagem e relação entre campos ainda abertos. Preserva D106–107; não amplia I0-r1 |
+| D109 | Contar dias a partir do aceite do convite | Duração em dias começa no aceite, sem consumir prazo no envio/cadastro. Data final fixa e renovação não redefinidas; não amplia I0-r1 |
+| D110 | Data fixa não muda pelo aceite tardio | Dias contados do aceite; data final fixa mantida conforme personal, sem prorrogação automática. Convite aceito após vencimento ainda aberto; não amplia I0-r1 |
+| D111 | Renovação manual pelo personal | Nova data ou dias: ativo soma ao vencimento atual; vencido conta da renovação e libera novos treinos. Preservar histórico, sem registrar pagamento. Não amplia I0-r1 |
+| D112 | Avisos no app sobre vencimento | 7 dias antes, no dia e persistente após vencer; renovar com personal, histórico disponível e novos treinos bloqueados. Sem push/e-mail aprovado |
+| D113 | Versionar passagem para produto no ambiente online | Commit e continuidade documental solicitados; prompt na seção 6 de CHAT_PROMPTS.md. Sem deploy, nova implementação ou criação de chat |
 
 Direção técnica discutida: API em C#/ASP.NET Core aproveitando a experiência do fundador; frontend web/mobile permanece TypeScript. Especificação técnica inicial ainda descreve backend Next.js e deve ser revisada separadamente. Não iniciar código de aplicação neste registro.
 
@@ -789,3 +809,111 @@ Próximo cenário nesta conversa de produto: execução e registro do bi-set de 
 Confirmação em 24/10/2026: D93: no bi-set discutido em D54–55, aluno confirma o par inteiro de uma vez, em vez de confirmar cada exercício separadamente. Preserva dois exercícios ordenados com prescrição e registros próprios; confirmação conjunta não transforma suas quantidades ou cargas em um único valor. Descanso somente após o par continua confirmado. Não define registro de par parcial, preenchimento inicial ou obrigação de informar cada campo. Sem ampliar I0-r1 ou autorizar código.
 
 Próximo cenário nesta conversa de produto: apresentação do registro do par completo. Propor uma área por exercício, com repetições/carga próprias, e ação Concluir par para salvar a rodada e iniciar descanso; apresentação ainda não confirmada. Não extrapolar para par parcial.
+
+### Fluxo normal de execução do bi-set (D94)
+
+Confirmação em 19/11/2026: D94: fluxo normal do bi-set confirmado: mostrar os dois exercícios juntos, com repetições e carga próprias; ação Concluir par salva a rodada e inicia descanso. Após o descanso, seguir para a próxima rodada preservando registros anteriores, repetindo conforme quantidade prescrita. Complementa D54–55 e D93. Não implica confirmação automática de execução ao terminar descanso. Par parcial, preenchimento inicial dos campos e transição após a última rodada ainda abertos. Sem ampliar I0-r1 ou autorizar código.
+
+Próximo cenário nesta conversa de produto: última rodada do bi-set. Propor manter descanso prescrito após o par e, ao final, apresentar o próximo exercício sem iniciar execução automaticamente. Transição ainda não confirmada; não confundir com o intervalo entre rodadas já definido.
+
+### Transição após a última rodada do bi-set (D95)
+
+Confirmação em 19/11/2026: D95: após concluir a última rodada do bi-set, manter o descanso prescrito e então apresentar o próximo exercício, sem iniciar sua execução automaticamente. Complementa D94 e resolve essa transição quando existe próximo exercício; não generaliza a regra para todo método nem define encerramento de sessão quando o bi-set é o último item. Sem ampliar I0-r1 ou autorizar código.
+
+Próximo cenário nesta conversa de produto: registro de rodada parcial do bi-set, quando aluno fez somente o primeiro exercício. Propor registrar somente o realizado, manter segundo como não informado até declaração do aluno e oferecer indicação explícita de não realizado; sem marcar o par completo. Caminho de registro e descanso nesse caso ainda abertos.
+
+### Registro parcial do bi-set (D96)
+
+Confirmação em 19/11/2026: D96: se o aluno realizar somente o primeiro exercício do par, permitir registrar essa execução separadamente. O segundo permanece não informado ou recebe Não fiz quando o aluno indicar explicitamente. Não apresentar o par como totalmente realizado. Complementa D93–95: confirmação conjunta continua sendo o fluxo normal do par completo; registro parcial é exceção. Ausência de registro não comprova não realização. Gesto/interface e descanso na rodada parcial ainda abertos. Sem ampliar I0-r1 ou autorizar código.
+
+Próximo cenário nesta conversa de produto: descanso no registro parcial do bi-set. D54 impede iniciar descanso automaticamente entre os exercícios do par; discutir se, ao declarar que não fará o segundo, aluno pode encerrar a rodada parcial e iniciar o descanso previsto, preservando o registro parcial. Comportamento ainda proposto, não confirmado.
+
+### Descanso após rodada parcial declarada (D97)
+
+Confirmação em 19/11/2026: D97: quando aluno registra o primeiro exercício do bi-set e marca Não fiz no segundo, permitir encerrar a rodada parcial e iniciar o descanso previsto, preservando o realizado e a indicação do segundo. Não apresentar par como totalmente realizado. Complementa D96; não iniciar pausa automaticamente apenas por registrar o primeiro exercício e não estender esse encerramento ao segundo apenas não informado. Sem ampliar I0-r1 ou autorizar código.
+
+Próximo cenário nesta conversa de produto: drop-set, começando por exemplo hipotético fornecido pelo fundador de uma série com reduções de carga. Esclarecer etapas prescritas, repetições e descanso antes de propor montagem/registro; não inferir protocolo pelo nome do método. Bi-set com segundo não informado, outros casos parciais e encerramento de sessão permanecem pendências para recorte futuro.
+
+### Relato de execução do drop-set (D98)
+
+D98 (relato de uso): no drop-set, fundador colocava o peso que conseguia e seguia a ordem de repetições para retirada de peso; relatou descanso após o primeiro ciclo de drop. Não informou cargas, quantidades por etapa, tamanho das reduções ou número de ciclos. Não tratar relato como protocolo universal nem como contrato de interface aprovado. Sem ampliar I0-r1.
+
+Próximo cenário nesta conversa de produto: esclarecer se ciclo significa a sequência inteira de etapas com reduções, sem descanso entre elas e com descanso ao final. Usar exemplo hipotético, sem atribuir números ao relato. Depois detalhar o que personal prescreve e o que aluno escolhe/registra.
+
+### Prescrição de reduções no drop-set (D99)
+
+Confirmação em 19/11/2026: D99: fundador confirmou, no drop-set discutido, etapas com reduções de carga sem descanso entre elas. O personal define o número de reduções e não informa os pesos; o aluno escolhe as cargas usadas. Complementa o relato D98 de seguir repetições orientadas e descansar após o ciclo. Não fixa quantidade de reduções nem pesos; percentual/tamanho da redução, quantidade de ciclos e sua repetição ainda não definidos. Não interpretar número de reduções como número de ciclos. Sem ampliar I0-r1 ou autorizar código.
+
+Próximo cenário nesta conversa de produto: propor montagem do drop-set com quantidade de ciclos, número de reduções por ciclo, repetições por etapa e descanso após ciclo. Pesos ficam para registro do aluno. Distinguir exemplo hipotético de prescrição real e confirmar repetição de ciclos sem presumir confirmação anterior.
+
+### Montagem do drop-set por ciclos e etapas (D100)
+
+D100: formato de montagem do drop-set confirmado: personal informa quantidade de ciclos, quantidade de reduções por ciclo, repetições em cada etapa e descanso após cada ciclo. Duas reduções correspondem a três etapas de carga (inicial e duas reduções); exemplo de estrutura, não quantidade fixa. Pesos não são prescritos nesse formato, ficando escolhidos pelo aluno conforme D99. Sem descanso entre etapas. Registro e confirmação da execução ainda não definidos. Sem ampliar I0-r1 ou autorizar código.
+
+Próximo cenário nesta conversa de produto: propor registro do drop-set com repetições e carga próprias por etapa, preenchimento possível ao terminar o ciclo e uma ação Concluir ciclo para salvar e iniciar descanso; não exigir interação entre reduções. Proposta ainda não confirmada; carga ausente não bloqueia execução (D31). Histórico por etapas e ciclo parcial seguem abertos.
+
+### Registro do drop-set e nova prioridade de produto (D101–102)
+
+D101: fundador confirmou registro do drop-set com carga e repetições próprias por etapa ao terminar o ciclo, sem exigir interação no app entre reduções. Concluir ciclo salva registros e inicia descanso; carga opcional conforme D31. Histórico por etapas e ciclo parcial ainda abertos. Sem ampliar I0-r1.
+
+D102: fundador quer priorizar primeiras versões funcionais e evoluir por etapas, passando a discutir Login, Registro/Cadastro e Home. Alunos usarão somente mobile; personal usará mobile e também navegador no computador. D14–15 de piloto por convites permanecem vigentes; não presumir cadastro público. Formato do mobile (app instalado versus navegador no celular), significado de cadastro e conteúdo da Home ainda a esclarecer. Reprioriza discovery e exige reconciliar sequência mobile em ARCHITECTURE.md no planejamento futuro; não troca stack nem autoriza código, setup, deploy ou novo incremento.
+
+Próximo passo nesta conversa de produto: esclarecer se aluno deve usar aplicativo instalado desde a primeira versão ou se navegador no celular atende inicialmente. Depois recortar jornada por convite, criação/acesso à conta e primeira Home útil por perfil, conectada ao treino. Planejamento técnico em conversa própria somente quando solicitado; I0 permanece no escopo autorizado. Pendências de drop-set preservadas, sem exigir encerrá-las antes dessa nova prioridade.
+
+### Aplicativo instalado desde a primeira versão (D103)
+
+D103: fundador confirmou aplicativo instalado para o aluno desde a primeira versão utilizável, e não uma etapa inicial restrita ao navegador do celular. Complementa D102: aluno somente mobile; personal mobile e navegador no computador. Sistemas operacionais iniciais e forma de distribuição ainda abertos; não presumir publicação em lojas, contratação ou escolha técnica nova. I0-r1 web existente permanece como base local verificada; incluir mobile no próximo recorte exige planejamento e autorização próprios.
+
+Próximo passo nesta conversa de produto: definir se a primeira versão instalada deve atender Android, iPhone ou ambos. Depois fechar jornada de convite, criação/acesso à conta e Home útil por perfil. Sem iniciar implementação ou distribuição.
+
+### Plataformas iniciais do aluno (D104)
+
+D104: fundador confirmou Android e iPhone (iOS) na primeira versão utilizável do aplicativo instalado do aluno. Complementa D102–103. Forma de distribuição e validação em cada plataforma ainda a planejar; não implica publicação em lojas ou contratação. Sem ampliar I0-r1 ou autorizar implementação.
+
+Próximo cenário nesta conversa de produto: entrada do aluno por convite, preservando D14–15. Propor personal informar nome e e-mail e compartilhar convite; aluno cria senha/aceita vínculo no app e entra na Home. Dados mínimos, identificação para login e canal do convite ainda propostos. Home com e sem treino publicado será refinada depois. Planejamento técnico em finalidade própria quando solicitado.
+
+### Acesso e validade do acompanhamento (D105–106)
+
+D105: fundador considerou e-mail e senha suficientes para acesso inicial e manifestou interesse em login por Google, Facebook e Apple para facilitar. Interesse em provedores sociais ainda requer priorização para primeira entrega; não presumir implementação dos três, exclusão da senha ou cadastro público. D14–15 preservados. Resposta não confirma isoladamente todos os dados/canal do convite e conteúdo da Home propostos.
+
+D106: fundador solicitou validade do acesso do aluno definida pelo personal no convite/cadastro, correspondente ao prazo do acompanhamento contratado diretamente com o professor. Ao vencer, aluno perde acesso; oferecer avisos para renovar com o personal. Nesta etapa apenas configurar validade, sem gerenciar cobrança/pagamento do acompanhamento. D05 continua sem cobrança no produto e sem prazo de teste automático; D106 introduz bloqueio pelo prazo do vínculo, não por comprovação de pagamento. D19 continua sobre vigência da prescrição: prazo de acesso não publica, substitui ou apaga ficha. Data versus duração, início da contagem, alcance do bloqueio, renovação, avisos e comportamento offline ainda abertos. Não confundir validade de acesso com expiração do link de convite. Sem ampliar I0-r1 ou autorizar código.
+
+Próximo cenário nesta conversa de produto: vencimento do acesso. Esclarecer se aluno ainda pode entrar para ver aviso/contatar personal e consultar histórico, bloqueando treinos, ou se todo conteúdo do acompanhamento fica indisponível. Depois definir data final, renovação/avisos e impacto offline. Login social permanece interesse a priorizar.
+
+### Acesso do aluno após vencimento (D107)
+
+D107: após vencer o prazo do acompanhamento (D106), aluno continua podendo entrar no app, ver aviso de renovação e consultar seu histórico, mas não iniciar novos treinos. Qualifica perda de acesso de D106 como restrição de uso, sem bloquear login ou consulta do histórico. Não apaga registros. Sessão já iniciada no vencimento, consulta da ficha vigente, edição posterior e fiscalização offline ainda a definir. Sem ampliar I0-r1 ou autorizar implementação.
+
+Próximo cenário nesta conversa de produto: como personal define a validade. Propor data final explícita no convite/cadastro, ajustável pelo personal para renovar, sem depender de pagamento registrado. Definir inclusão do dia final e avisos depois; proposta ainda não confirmada. Sessão em andamento no vencimento e comportamento offline preservados como pendências para planejamento do recorte.
+
+### Formas de definir a validade (D108)
+
+D108: fundador aceitou definir validade do acompanhamento tanto por data final quanto por duração em dias. Complementa D106–107; não tratar como alternativas excludentes nem calcular vencimento sem definir início da contagem. Data inicial, inclusão do dia final, sincronização entre os dois preenchimentos e forma de renovação ainda abertos. Sem gestão de pagamentos e sem ampliar I0-r1 ou autorizar implementação.
+
+Próximo cenário nesta conversa de produto: definir início da validade por dias. Comparar data inicial escolhida pelo personal com contagem a partir do aceite do convite, especialmente se aluno aceita dias depois do envio. Não presumir que data de envio, cadastro e aceite são iguais. Depois definir dia final, renovação e avisos.
+
+### Início da validade em dias (D109)
+
+D109: na validade definida por duração em dias (D108), contagem começa quando aluno aceita o convite. Envio do convite ou cadastro prévio pelo personal não consomem esse prazo. Não estabelece validade do link de convite nem altera automaticamente data final explicitamente escolhida pelo personal. Inclusão do dia final, renovação e relação entre data fixa e aceite ainda abertos. Sem ampliar I0-r1 ou autorizar implementação.
+
+Próximo cenário nesta conversa de produto: conciliar data final fixa com aceite tardio. Propor que data fixa continue sendo a data escolhida pelo personal, enquanto duração em dias calcula vencimento a partir do aceite. Se data fixa já passou, não conceder período ativo nem criar nova validade automaticamente; tratamento do convite ainda a confirmar. Renovar e avisos seguem pendentes.
+
+### Data fixa e duração no aceite (D110)
+
+D110: fundador confirmou as duas regras de validade: duração em dias contada do aceite do convite (D109); data final fixa permanece a escolhida pelo personal, independentemente do dia do aceite, sem prorrogação automática. Complementa D108–109. Convite aceito após data fixa, inclusão do dia final e operação de renovação ainda abertos; não tratar confirmação como aceite de tratamento de convite já vencido. Sem ampliar I0-r1 ou autorizar implementação.
+
+Próximo cenário nesta conversa de produto: renovação manual pelo personal. Propor informar nova data final ou acrescentar dias; se ainda ativo, somar ao vencimento atual; se já vencido, contar da renovação e liberar novos treinos, preservando histórico e sem registrar pagamento. Regras ainda propostas. Avisos, convite após data fixa, sessão em andamento e offline continuam pendentes.
+
+### Renovação manual do acesso (D111)
+
+D111: fundador confirmou renovação manual pelo personal, escolhendo nova data final ou acrescentando dias. Ao acrescentar dias com acesso ativo, somar ao vencimento atual; com acesso vencido, contar da renovação e liberar novos treinos. Preservar histórico, sem registrar pagamento. Complementa D106–110; não renovar automaticamente nem exigir novo convite nessa renovação. Horário/dia final e propagação offline ainda a definir. Sem ampliar I0-r1 ou autorizar implementação.
+
+Próximo cenário nesta conversa de produto: avisos de renovação. Propor aviso no app 7 dias antes, no dia do vencimento e aviso persistente enquanto vencido, com orientação para falar com personal. Antecedência/canal ainda propostos; não presumir push, e-mail, envio a terceiros ou cobrança. Convite após data fixa, sessão em andamento e offline preservados como pendências.
+
+### Avisos e passagem para ambiente online (D112–113)
+
+D112: fundador confirmou avisos dentro do app 7 dias antes do vencimento, no dia do vencimento e aviso persistente na Home após vencer, orientando renovar diretamente com o personal. Preservar histórico acessível e bloqueio de novos treinos (D107). Sem push/e-mail de renovação aprovados. Comportamento para prazos menores que 7 dias, dia/horário final e offline ainda abertos.
+
+D113: em 23/11/2026, fundador solicitou commit da documentação e passagem para continuar esta conversa de produto no ambiente online/servidor. Autoriza preparar e versionar continuidade; não autoriza deploy do Delta Fit, implementar acesso/mobile, contratar serviços ou criar/enviar mensagens a novos chats. Acesso no destino depende dos arquivos atualizados no repositório; não presumir memória global ou transporte automático da conversa.
+
+Retomar produto no ambiente online com CHAT_PROMPTS.md, seção 6. Próximo cenário: Home do aluno ativo com ficha publicada, ainda sem ficha, perto do vencimento e com acesso vencido; consolidar uma proposta e perguntar somente escolhas materiais. Pendências reais: dados/canal/expiração do convite, recuperação de acesso, prioridade dos logins sociais, Home do personal, limite do dia final, sessão iniciada no vencimento e regra offline. Não é necessário fechar todo o piloto para planejar próxima entrega; definir recorte antes de preparar execução técnica.

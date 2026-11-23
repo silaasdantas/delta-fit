@@ -1,6 +1,6 @@
 # Delta Fit — prompts para iniciar conversas
 
-Atualizado em 19/10/2026. Catálogo solicitado pelo fundador (D63). Usar em conversas com acesso à pasta do projeto. A existência deste arquivo não inicia chats nem autoriza implementação. Cada bloco só vira instrução quando escolhido e enviado pelo usuário na conversa correspondente.
+Atualizado em 23/11/2026. Passagem atual de produto online na seção 6; entradas anteriores preservadas por finalidade. Catálogo solicitado pelo fundador (D63). Usar em conversas com acesso à pasta do projeto. A existência deste arquivo não inicia chats nem autoriza implementação. Cada bloco só vira instrução quando escolhido e enviado pelo usuário na conversa correspondente.
 
 ## Como usar
 
@@ -92,3 +92,22 @@ Ao encerrar um bloco, registrar onde paramos, decisões ou evidências novas, pe
 - I0-r1 implementado/verificado localmente sob D74; evidências em docs/progress.md. Commit inicial e remoto conferidos localmente em 19/10; isso não comprova aceite funcional ou revisão independente.
 - Chat atual: implementação/correções e passagem documental. Recomenda-se outro para revisão (seção 4) e outro para planejamento de pipeline (seção 5), conforme a finalidade escolhida. Planejamento pode registrar pendências da revisão, sem presumir aceite.
 - Servidor, pipeline e validação com usuários não comprovados. Nenhum chat criado automaticamente.
+
+
+## 6. Produto no ambiente online — passagem de 23/11/2026
+
+D113: em 23/11/2026, fundador solicitou commit da documentação e passagem para continuar esta conversa de produto no ambiente online/servidor. Autoriza preparar e versionar continuidade; não autoriza deploy do Delta Fit, implementar acesso/mobile, contratar serviços ou criar/enviar mensagens a novos chats. Acesso no destino depende dos arquivos atualizados no repositório; não presumir memória global ou transporte automático da conversa.
+
+No destino, selecionar o repositório Delta Fit e disponibilizar o commit desta passagem (ou fornecer estes documentos). Copiar o bloco abaixo. Não executar setup nem adaptar scripts Windows apenas para retomar discovery.
+
+```text
+Esta é a continuação da conversa de produto do Delta Fit no ambiente online. Leia AGENTS.md, CONTEXT.md, FIRST_VERSION.md e DEVELOPMENT_WORKFLOW.md; consulte somente trechos pertinentes de PRODUCT_DECISIONS.md. Confira que o checkpoint inclui D113; se não incluir, solicite a versão documental atual, sem inventar continuidade. SPEC.md/PLANS.md são históricos parcialmente superados.
+
+Produto em discovery. I0-r1 foi implementado/verificado localmente; não reiniciar I0, assumir aceite funcional ou executar prompts técnicos antigos. Não criar código/setup/deploy, contratar, criar chats, delegar ou enviar mensagens a outras conversas. Ambiente online desta conversa não significa aplicação publicada em servidor.
+
+Prioridade atual: primeiras versões utilizáveis de Login, Registro/Cadastro e Home. Aluno somente app instalado Android/iOS desde primeira versão; personal mobile e navegador no computador. Piloto por convites; e-mail/senha aceitos; Google/Facebook/Apple desejados, ainda a priorizar. Personal define validade por data final fixa ou dias a partir do aceite. Ao vencer: aluno entra, vê aviso e histórico, mas não inicia treinos. Renovação manual por data ou dias: ativo soma ao vencimento, vencido conta da renovação. Sem gerir pagamentos. Avisos no app 7 dias antes, no dia e persistente após vencer. D105–112 detalham limites.
+
+Retome pela Home do aluno: ativo com treino publicado, ainda sem ficha, perto de vencer e vencido. Apresente proposta consolidada, distinguindo regras confirmadas e sugestões; pergunte somente escolhas materiais, sem pequenas confirmações repetitivas. Depois Home do personal e recorte da próxima entrega; não é preciso fechar todo o piloto antes de planejar. Pendências de convite, recuperação de acesso, login social, limite do dia final, sessão em andamento e offline estão preservadas, sem solução presumida.
+
+Converse em português. Registre confirmações com IDs estáveis e atualize escopo/retomada; não ampliar implementação silenciosamente. Indique se próximo passo continua neste chat de produto ou exige outra finalidade. Planejamento/execução técnica depende de solicitação própria e consulta a ARCHITECTURE.md/ADRs relevantes.
+```
